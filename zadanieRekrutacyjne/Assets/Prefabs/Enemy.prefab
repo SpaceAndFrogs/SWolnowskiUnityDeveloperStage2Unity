@@ -6243,6 +6243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6869246054242409989}
+  - component: {fileID: 8287150733585654003}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -6266,6 +6267,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8287150733585654003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312460399568911048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd379046baffe864d8d83856eb416430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
 --- !u!1 &8340928182539206663
 GameObject:
   m_ObjectHideFlags: 0
@@ -6891,6 +6905,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303386391478879558, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00021
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303386391478879558, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00099
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303386391478879558, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978220705170172708, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0019
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978220705170172708, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2969
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978220705170172708, guid: 320bce4cea4267f4bbcbe0c1da4cb95e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320bce4cea4267f4bbcbe0c1da4cb95e, type: 3}
