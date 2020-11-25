@@ -4,9 +4,32 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
+    public GlobalVariables var;
+    public float resetDelay;
+    private float resetDelayCd;
+    private bool reset = false;
+    private void Start()
+    {
+        resetDelayCd = resetDelay;
+    }
     public void RestartLevel()
     {
-        Debug.Log("Lose");
-        //To Do: death animation and sound, level reset 
+
+        //To Do: death animation and sound
+        reset = true;
+    }
+    private void Update()
+    {
+        if(reset)
+        {
+            resetDelayCd -= Time.deltaTime;
+        }
+
+        if(resetDelayCd <= 0)
+        {
+            reset = false;
+            resetDelayCd = resetDelay;
+            var.ResetLevel();
+        }
     }
 }
