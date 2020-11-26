@@ -7,19 +7,24 @@ public class Shoot : MonoBehaviour
     private Touch touch;
     public GameObject shootPoint1;
     public GameObject shootPoint2;
-    private bool canShoot = true;
+    private bool canShoot = false;
     void Update()
     {
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Ended && !canShoot)
+            if (touch.phase == TouchPhase.Began && !canShoot)
             {
                 canShoot = true;
             }
 
-            if (touch.phase == TouchPhase.Stationary && canShoot)
+            if(touch.phase == TouchPhase.Moved && canShoot)
+            {
+                canShoot = false;
+            }
+
+            if (touch.phase == TouchPhase.Ended && canShoot)
             {
                 canShoot = false;
                 Shooting();

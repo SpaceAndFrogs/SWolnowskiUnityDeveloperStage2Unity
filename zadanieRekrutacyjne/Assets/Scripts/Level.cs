@@ -5,6 +5,7 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     public GameObject[] spawnPoints;
+    public GameObject playerSpawnPoint;
 
     public void SpawnEnemies()
     {

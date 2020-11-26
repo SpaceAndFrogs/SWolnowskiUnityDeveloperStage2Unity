@@ -8,6 +8,7 @@ public class GlobalVariables : MonoBehaviour
     int numberOfEnemiesOnLevel = 0;
     public Level[] levels;
     public GameObject[] enemies;
+    public Transform pollingPlace;
     public void IncreseCurrentLevel()
     {
         currentLevel++;
@@ -36,6 +37,10 @@ public class GlobalVariables : MonoBehaviour
     public void ResetLevel()
     {
         numberOfEnemiesOnLevel = 0;
-        levels[currentLevel].SpawnEnemies();
+        currentLevel--;
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.transform.position = pollingPlace.position;
+        }
     }
 }
