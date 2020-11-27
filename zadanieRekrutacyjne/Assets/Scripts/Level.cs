@@ -14,6 +14,7 @@ public class Level : MonoBehaviour
             point.SetActive(true);
             EnemySpawn enemySpawn = point.GetComponent<EnemySpawn>();
             enemySpawn.Spawn();
+            
         }
     }
 }

@@ -8,9 +8,20 @@ public class CameraMovement : MonoBehaviour
     public GameObject player;
     public float movementSpeed;
     public LevelCounter levelCounter;
+    public GameObject endMenu;
+    public GameObject inGameMenu;
+    public GameObject menuButton;
+    
     void Update()
     {
-        if(var.NumberOfEnemies() == 0)
+        if (var.CurrentLevel() == 5 && var.NumberOfEnemies() == 0)
+        {
+            inGameMenu.SetActive(false);
+            menuButton.SetActive(false);
+            endMenu.SetActive(true);
+        }
+
+        if (var.NumberOfEnemies() == 0 && var.CurrentLevel() < 5)
         {
             
             Vector3 offSet = new Vector3(0, 0, -3f);
@@ -22,5 +33,7 @@ public class CameraMovement : MonoBehaviour
             var.IncreseCurrentLevel();
             levelCounter.ChangeLevel();
         }
+
+        
     }
 }

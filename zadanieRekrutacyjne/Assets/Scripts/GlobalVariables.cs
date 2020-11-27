@@ -8,7 +8,10 @@ public class GlobalVariables : MonoBehaviour
     int numberOfEnemiesOnLevel = 0;
     public Level[] levels;
     public GameObject[] enemies;
-    public Transform pollingPlace;
+    public GameObject poolingPlace;
+    public GameObject endMenu;
+    public GameObject restartExitMenu;
+    public GameObject menuButton;
     public void IncreseCurrentLevel()
     {
         currentLevel++;
@@ -36,11 +39,53 @@ public class GlobalVariables : MonoBehaviour
 
     public void ResetLevel()
     {
-        numberOfEnemiesOnLevel = 0;
-        currentLevel--;
+        
+        
         foreach(GameObject enemy in enemies)
         {
-            enemy.transform.position = pollingPlace.position;
+            EnemyHit enemyHit = enemy.GetComponent<EnemyHit>();
+            enemyHit.aiming.enabled = false;
+            enemyHit.shoot.enabled = false;
+            enemyHit.rotating.enabled = false;
+            enemyHit.line.SetActive(false);
+            enemyHit.transform.position = poolingPlace.transform.position;
         }
+        currentLevel--;
+        numberOfEnemiesOnLevel = 0;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Resume()
+    {
+        restartExitMenu.SetActive(false);
+        menuButton.SetActive(true);
+    }
+
+    public void ToInGameMenu()
+    {
+        restartExitMenu.SetActive(true);
+        menuButton.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        restartExitMenu.SetActive(false);
+        endMenu.SetActive(false);
+        menuButton.SetActive(true);
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyHit enemyHit = enemy.GetComponent<EnemyHit>();
+            enemyHit.aiming.enabled = false;
+            enemyHit.shoot.enabled = false;
+            enemyHit.rotating.enabled = false;
+            enemyHit.line.SetActive(false);
+            enemyHit.transform.position = poolingPlace.transform.position;
+        }
+        currentLevel = 0;
+        numberOfEnemiesOnLevel = 0;
     }
 }

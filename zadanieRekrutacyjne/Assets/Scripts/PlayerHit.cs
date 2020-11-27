@@ -8,6 +8,7 @@ public class PlayerHit : MonoBehaviour
     public float resetDelay;
     private float resetDelayCd;
     private bool reset = false;
+    public AudioSource hitSound;
     private void Start()
     {
         resetDelayCd = resetDelay;
@@ -16,7 +17,9 @@ public class PlayerHit : MonoBehaviour
     {
 
         //To Do: death animation and sound
+        hitSound.Play();
         reset = true;
+        
     }
     private void Update()
     {

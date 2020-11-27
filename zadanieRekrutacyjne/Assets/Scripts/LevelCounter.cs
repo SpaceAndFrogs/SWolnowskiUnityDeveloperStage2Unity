@@ -10,11 +10,11 @@ public class LevelCounter : MonoBehaviour
     private void Start()
     {
         counter = gameObject.GetComponent<TextMeshProUGUI>();
-        counter.text = "LvL " + (var.CurrentLevel() + 1);
+        counter.text = "LvL " + var.CurrentLevel();
     }
 
     public void ChangeLevel()
     {
-        counter.text = "LvL " + (var.CurrentLevel() + 1);
+        counter.text = "LvL " + var.CurrentLevel();
     }
 }
