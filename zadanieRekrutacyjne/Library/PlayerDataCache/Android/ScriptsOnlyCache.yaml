@@ -23,10 +23,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -695,7 +693,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
-      Hash: 353ac447fd0e1725b52dea71dd74a9fb
+      Hash: 2527211c8332ee27d7e8d2a90b709051
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMovement
@@ -743,7 +741,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 9e8bf53b7ca101f45611c21b0b1fe054
+      Hash: c37edbbee4b228bfabed27f3b3e58e5a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GlobalVariables

@@ -12,6 +12,7 @@ public class GlobalVariables : MonoBehaviour
     public GameObject endMenu;
     public GameObject restartExitMenu;
     public GameObject menuButton;
+    public Shoot playerShootScript;
     public void IncreseCurrentLevel()
     {
         currentLevel++;
@@ -63,12 +64,26 @@ public class GlobalVariables : MonoBehaviour
     {
         restartExitMenu.SetActive(false);
         menuButton.SetActive(true);
+
+        playerShootScript.enabled = true;
+        foreach (GameObject enemy in enemies)
+        {
+            Shoot shoot = enemy.GetComponent<Shoot>();
+            shoot.enabled = true;
+        }
     }
 
     public void ToInGameMenu()
     {
         restartExitMenu.SetActive(true);
         menuButton.SetActive(false);
+        playerShootScript.enabled = false;
+
+        foreach (GameObject enemy in enemies)
+        {
+            Shoot shoot = enemy.GetComponent<Shoot>();
+            shoot.enabled = false;          
+        }
     }
 
     public void RestartGame()
@@ -76,6 +91,7 @@ public class GlobalVariables : MonoBehaviour
         restartExitMenu.SetActive(false);
         endMenu.SetActive(false);
         menuButton.SetActive(true);
+        playerShootScript.enabled = true;
         foreach (GameObject enemy in enemies)
         {
             EnemyHit enemyHit = enemy.GetComponent<EnemyHit>();

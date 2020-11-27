@@ -8,17 +8,21 @@ public class CameraMovement : MonoBehaviour
     public GameObject player;
     public float movementSpeed;
     public LevelCounter levelCounter;
-    public GameObject endMenu;
-    public GameObject inGameMenu;
-    public GameObject menuButton;
     
     void Update()
     {
         if (var.CurrentLevel() == 5 && var.NumberOfEnemies() == 0)
         {
-            inGameMenu.SetActive(false);
-            menuButton.SetActive(false);
-            endMenu.SetActive(true);
+            var.playerShootScript.enabled = false;
+            foreach (GameObject enemy in var.enemies)
+            {
+                Shoot shoot = enemy.GetComponent<Shoot>();
+                shoot.enabled = false;
+            }
+
+            var.restartExitMenu.SetActive(false);
+            var.menuButton.SetActive(false);
+            var.endMenu.SetActive(true);
         }
 
         if (var.NumberOfEnemies() == 0 && var.CurrentLevel() < 5)

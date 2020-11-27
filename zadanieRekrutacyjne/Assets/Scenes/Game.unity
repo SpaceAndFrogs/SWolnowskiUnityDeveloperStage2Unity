@@ -3868,6 +3868,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1175855019365440162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &372604148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4205204761972804551, guid: f2ea51f03fe1e7941865970e7154d6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175855019365440162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372604143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9a95a39dc28d54d88ad31705aff7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &376785907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6571,6 +6583,7 @@ MonoBehaviour:
   endMenu: {fileID: 1862543831}
   restartExitMenu: {fileID: 1145393445}
   menuButton: {fileID: 1856136875}
+  playerShootScript: {fileID: 372604148}
 --- !u!4 &652908075
 Transform:
   m_ObjectHideFlags: 0
@@ -13692,9 +13705,6 @@ MonoBehaviour:
   player: {fileID: 372604143}
   movementSpeed: 0.05
   levelCounter: {fileID: 2040881051}
-  endMenu: {fileID: 1862543831}
-  inGameMenu: {fileID: 1145393445}
-  menuButton: {fileID: 1856136875}
 --- !u!1 &2031344212
 GameObject:
   m_ObjectHideFlags: 0
