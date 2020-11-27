@@ -25,13 +25,13 @@ public class Aiming : MonoBehaviour
 
             if(hit.transform.gameObject.CompareTag("Enemy") )
             {
-                shootPoint2.transform.position = hit.point;
+                
                 line.colorGradient = goodAiming;
             }else
             {
                 if (hit.transform.gameObject.CompareTag("Player"))
                 {
-                    shootPoint2.transform.position = hit.point;
+                    
                     line.colorGradient = badAiming;
                 }else
                 {
@@ -46,14 +46,13 @@ public class Aiming : MonoBehaviour
                             line.colorGradient = goodAiming;
                         }
 
-                        shootPoint2.transform.position = hit.point;
-                    }
+                    }    
                     
                 }
                 
             }
-            
-            
+
+            shootPoint2.transform.position = hit.point;
         }
         line.SetPosition(0, shootPoint1.transform.position);
         line.SetPosition(1, shootPoint2.transform.position);
